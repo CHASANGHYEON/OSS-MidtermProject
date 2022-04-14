@@ -6,3 +6,5 @@ Teachable Machine을 이용하여 음식 이미지를 학습 시킨 후 이미�
 2. 시작 버튼 클릭
 3. 분석 버튼 클릭
 4. 시간 경과 후 분석 텍스트 출력
+
+![웹페이지 이미지](https://user-images.githubusercontent.com/82189042/163329731-619c9739-40b5-47c1-a89c-b463fb70349d.jpg)
