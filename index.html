@@ -191,6 +191,12 @@
   width: 600px;
   margin: 0 auto;
   padding: 20px;
+
+
+}
+
+a{
+    color: red;
 }
 
   </style>
@@ -213,13 +219,16 @@
   </div>
 
   <div class="body-cotent">
-    <h3>첨부한 이미지에 대한 영양 성분을 분석해주는 웹서비스 입니다.</h3>
+  <h3>첨부한 이미지에 대한 영양 성분을 분석해주는 웹서비스 입니다.</h3>
   <div>1. 영양 성분 분석을 원하는 음식의 이미지를 첨부해주세요.</div> 
   <div>2. 이미지를 업로드 한 뒤 시작 버튼과 분석 버튼을 클릭해주세요.</div> 
   <div>3. 이미지를 잘못 첨부한 경우 REMOVE 버튼을 클릭해 삭제해주세요.</div>
   <div>4. 3초 뒤에 원하는 음식의 영양 성분이 나타납니다.</div>  
   <div>학습된 음식은 쌀밥, 김밥, 떡볶이, 라면, 후라이드 치킨, 피자, 짜장면 7종 입니다.</div>  
   <div>이외의 이미지를 첨부한 경우 원하는 결과가 출력되지 않습니다.</div>  
+  <br>
+  <br>
+  <a><div id="label-container"></div></a>
   </div>
   <div class="file-upload-content">
     <img class="file-upload-image" id="face-image" src="#" alt="your image" />
@@ -229,7 +238,6 @@
   </div>
 </div>
 <div id="webcam-container"></div>
-<div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 <script>function readURL(input) {
@@ -363,7 +371,7 @@ $('.image-upload-wrap').bind('dragover', function () {
         for (let i = 0; i < maxPredictions; i++) {
           if (prediction[i].probability.toFixed(2) === '1.00') {
               const item = data[prediction[i].className] //음식]
-              labelContainer.innerHTML = `이름: ${item.name}, 칼로리: ${item.calorie}, 나트륨: ${item.natrium}, 탄수화물: ${item.carbohydrate},
+              labelContainer.innerHTML = `  이름: ${item.name}, 칼로리: ${item.calorie}, 나트륨: ${item.natrium}, 탄수화물: ${item.carbohydrate},
                                           당: ${item.sugars}, 지방: ${item.fat}, 단백질: ${item.protein}`
           }
         }
